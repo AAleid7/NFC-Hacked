@@ -1,0 +1,59 @@
+index.html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>System Breach</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="8;url=https://www.youtube.com/shorts/8wuIvTw3Wac?si=6uBp_8-gvqyW3wzL">
+  <style>
+    body {
+      background-color: black;
+      color: #00ff00;
+      font-family: monospace;
+      font-size: 16px;
+      padding: 20px;
+    }
+    #terminal {
+      white-space: pre-wrap;
+      overflow-wrap: break-word;
+    }
+    .blinking {
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div id="terminal"></div>
+  <script>
+    const terminal = document.getElementById('terminal');
+    const lines = [
+      "[ACCESS GRANTED]",
+      "Initializing session...",
+      "IP Address: 192.168.0.245",
+      "Device: Android 13 – Pixel 6",
+      "GPS Lock: Acquired (Lat: 25.276987, Lon: 55.296249)",
+      "Accessing front camera...",
+      "Uploading session to server...",
+      "Injecting payload...",
+      "Device compromised.",
+      "Redirecting to control panel in 8 seconds..."
+    ];
+
+    let i = 0;
+    function typeLine() {
+      if (i < lines.length) {
+        terminal.innerHTML += lines[i] + "\n";
+        i++;
+        setTimeout(typeLine, 900);
+      }
+    }
+
+    typeLine();
+  </script>
+</body>
+</html>
